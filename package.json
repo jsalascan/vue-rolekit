@@ -1,10 +1,18 @@
 {
   "name": "vue-rolekit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Kit de componentes Vue 3: botón, input, select, tabla y más, todos con estilo propio.",
   "author": "Jose Antonio Salas",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalascan/vue-rolekit.git"
+  },
+  "homepage": "https://jsalascan.github.io/vue-rolekit/",
+  "bugs": {
+    "url": "https://github.com/jsalascan/vue-rolekit/issues"
+  },
   "packageManager": "pnpm@11.1.2",
   "main": "./dist/vue-rolekit.umd.cjs",
   "module": "./dist/vue-rolekit.js",
