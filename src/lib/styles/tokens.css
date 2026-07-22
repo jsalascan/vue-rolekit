@@ -1,0 +1,121 @@
+/* Fuentes (mismas que jsalas.can: Urbanist OFL / ProFont libre) */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./fonts/urbanist-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("./fonts/urbanist-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("./fonts/urbanist-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProFontWindows";
+  src: url("./fonts/pro-font-windows-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProFontWindows";
+  src: url("./fonts/pro-font-windows-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --rk-font-sans: "Urbanist", system-ui, sans-serif;
+  --rk-font-mono: "ProFontWindows", ui-monospace, monospace;
+
+  --rk-paper: #f5efe6;
+  --rk-paper-2: #f1e5d5;
+  --rk-paper-3: #e9ded0;
+  --rk-edge: #dfd1bc;
+  --rk-ink: #2d2a24;
+  --rk-ink-soft: #5f5646;
+  --rk-accent: #ff8400;
+  --rk-danger: #c9432f;
+
+  --rk-radius-pill: 999px;
+  --rk-radius-lg: 1.5rem;
+  --rk-radius-md: 0.75rem;
+
+  /* Sombra recortada: offset duro, sin blur, sobre el edge */
+  --rk-shadow-paper: 3px 3px 0 var(--rk-edge);
+  --rk-shadow-paper-sm: 2px 2px 0 var(--rk-edge);
+  --rk-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos de campo compartidos por RInput / RSelect / RTextarea */
+.rk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--rk-font-sans);
+}
+.rk-field__label {
+  font-family: var(--rk-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rk-ink-soft);
+}
+.rk-field__input,
+.rk-field__textarea {
+  padding: 10px 14px;
+  border: 2px solid var(--rk-edge);
+  border-radius: var(--rk-radius-md);
+  background: var(--rk-paper-2);
+  color: var(--rk-ink);
+  font-family: var(--rk-font-sans);
+  font-size: 0.9rem;
+  transition: border-color 0.15s var(--rk-ease), box-shadow 0.15s var(--rk-ease);
+}
+.rk-field__textarea {
+  resize: both;
+  min-height: 90px;
+  max-width: 100%;
+  line-height: 1.5;
+}
+.rk-field__input::placeholder,
+.rk-field__textarea::placeholder {
+  color: var(--rk-ink-soft);
+  opacity: 0.7;
+}
+.rk-field__input:hover,
+.rk-field__textarea:hover {
+  border-color: var(--rk-ink-soft);
+}
+.rk-field__input:focus,
+.rk-field__textarea:focus {
+  outline: none;
+  border-color: var(--rk-ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rk-accent) 25%, transparent);
+}
+.rk-field__input--error {
+  border-color: var(--rk-danger);
+}
+.rk-field__input--error:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rk-danger) 25%, transparent);
+}
+.rk-field__error {
+  font-size: 0.75rem;
+  color: var(--rk-danger);
+}

@@ -1,0 +1,46 @@
+{
+  "name": "vue-rolekit",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Kit de componentes Vue 3: botón, input, select, tabla y más, todos con estilo propio.",
+  "author": "Jose Antonio Salas",
+  "license": "MIT",
+  "packageManager": "pnpm@11.1.2",
+  "main": "./dist/vue-rolekit.umd.cjs",
+  "module": "./dist/vue-rolekit.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-rolekit.js",
+      "require": "./dist/vue-rolekit.umd.cjs"
+    },
+    "./dist/vue-rolekit.css": "./dist/vue-rolekit.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -p tsconfig.json --noEmit && vite build --mode lib",
+    "build:site": "vue-tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-router": "^5.2.0",
+    "vue-tsc": "^2.2.0"
+  }
+}
