@@ -24,21 +24,16 @@ withDefaults(
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  border: 2px solid var(--rk-edge);
-  color: var(--rk-ink-soft);
-  background: var(--rk-paper-2);
-  box-shadow: var(--rk-shadow-paper-sm);
+  color: var(--rk-paper);
+  background: var(--rk-ink-soft);
 }
 .rk-badge--success {
-  border-color: #2f7a4d;
-  color: #2f7a4d;
+  background: #2f7a4d;
 }
 .rk-badge--warning {
-  border-color: var(--rk-accent);
-  color: var(--rk-accent);
+  background: var(--rk-accent);
 }
 .rk-badge--danger {
-  border-color: var(--rk-danger);
-  color: var(--rk-danger);
+  background: var(--rk-danger);
 }
 </style>
