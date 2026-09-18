@@ -1,6 +1,6 @@
 {
   "name": "vue-rolekit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "Kit de componentes Vue 3: botón, input, select, tabla y más, todos con estilo propio.",
   "keywords": [
