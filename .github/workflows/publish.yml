@@ -1,0 +1,52 @@
+name: Publicar en npm
+
+# Se lanza al subir un tag vX.Y.Z. Publica con provenance mediante la
+# publicación de confianza de npm (OIDC): no hace falta token en los secretos.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      # La publicación de confianza necesita npm 11.5.1 o superior.
+      - name: Actualizar npm
+        run: npm install -g npm@11
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: Comprobar que el tag coincide con la versión
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          if [ "$VERSION" != "$GITHUB_REF_NAME" ]; then
+            echo "El tag $GITHUB_REF_NAME no coincide con package.json ($VERSION)"
+            exit 1
+          fi
+
+      - name: Tests
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+      - name: Publicar
+        run: npm publish --provenance --access public

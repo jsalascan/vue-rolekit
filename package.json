@@ -1,0 +1,77 @@
+{
+  "name": "vue-rolekit",
+  "version": "1.0.3",
+  "type": "module",
+  "description": "Componentes Vue 3 con estilo propio y modo claro y oscuro: formularios, datos, navegación y feedback.",
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "ui",
+    "ui-kit",
+    "ui-components",
+    "component-library",
+    "design-system",
+    "typescript",
+    "vite",
+    "dark-mode",
+    "css-variables",
+    "theming",
+    "accessibility",
+    "datepicker",
+    "select",
+    "modal",
+    "toast"
+  ],
+  "author": "Jose Antonio Salas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalascan/vue-rolekit.git"
+  },
+  "homepage": "https://jsalascan.github.io/vue-rolekit/",
+  "bugs": {
+    "url": "https://github.com/jsalascan/vue-rolekit/issues"
+  },
+  "packageManager": "pnpm@11.1.2",
+  "main": "./dist/vue-rolekit.umd.cjs",
+  "module": "./dist/vue-rolekit.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-rolekit.js",
+      "require": "./dist/vue-rolekit.umd.cjs"
+    },
+    "./dist/vue-rolekit.css": "./dist/vue-rolekit.css",
+    "./dist/fonts.css": "./dist/fonts.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -p tsconfig.json --noEmit && vite build --mode lib",
+    "build:site": "vue-tsc -p tsconfig.json --noEmit && vite-ssg build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@unhead/vue": "^2.1.17",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0",
+    "vite-ssg": "^28.3.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-router": "^5.2.0",
+    "vue-tsc": "^2.2.0"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+site/
+*.local
+.DS_Store
+
+# documentos de trabajo
+/docs/
+/.superpowers/

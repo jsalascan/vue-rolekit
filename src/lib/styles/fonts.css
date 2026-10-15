@@ -1,0 +1,26 @@
+/* Fuentes opcionales de vue-rolekit (Public Sans e IBM Plex Mono: OFL).
+   Van aparte y como archivos, sin incrustar en base64: quien quiera las fuentes
+   importa 'vue-rolekit/dist/fonts.css'; sin él se usan las fuentes del sistema. */
+@font-face {
+  font-family: 'Public Sans';
+  src: url('./fonts/public-sans-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('./fonts/public-sans-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('./fonts/ibm-plex-mono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

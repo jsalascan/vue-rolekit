@@ -1,0 +1,62 @@
+/* Estilos base de la web de documentación (no forman parte de la librería). */
+html {
+  background: var(--rk-bg);
+  color: var(--rk-fg);
+}
+body {
+  margin: 0;
+  background: var(--rk-bg);
+  color: var(--rk-fg);
+  font-family: var(--rk-font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--rk-accent);
+  color: var(--rk-bg);
+}
+:focus-visible {
+  outline: 2px solid var(--rk-accent);
+  outline-offset: 2px;
+}
+code {
+  font-family: var(--rk-font-mono);
+  font-size: 0.9em;
+}
+
+.enlace {
+  color: var(--rk-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.enlace:hover {
+  text-decoration-thickness: 2px;
+}
+
+.rotulo {
+  margin: 0;
+  font-family: var(--rk-font-mono);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rk-muted);
+}
+
+.code-block {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--rk-subtle);
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-radius);
+  overflow-x: auto;
+  font-family: var(--rk-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--rk-fg);
+}
+.code-block code {
+  font-size: inherit;
+}

@@ -1,0 +1,111 @@
+/* Sin data-theme en <html> se sigue al sistema; data-theme="light|dark" lo fuerza.
+   Los valores oscuros van dos veces (atributo y media query) a propósito.
+   :where() deja la especificidad a cero: un `:root { --rk-accent: … }` de la app
+   sobrescribe el token en claro y en oscuro sin pelear con estos selectores. */
+:where(:root) {
+  color-scheme: light;
+  --rk-font-sans: 'Public Sans', system-ui, sans-serif;
+  --rk-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --rk-radius: 2px;
+  --rk-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --rk-bg: #ffffff;
+  --rk-fg: #1a1a1a;
+  --rk-muted: #5c5c5c;
+  --rk-rule: #e3e3e0;
+  --rk-subtle: #f6f6f4;
+  --rk-accent: #1f4fd1;
+  --rk-on-accent: #ffffff;
+  --rk-danger: #b3261e;
+  --rk-success: #1e6b3a;
+  --rk-warning: #8a5a00;
+}
+
+:where(:root[data-theme='dark']) {
+  color-scheme: dark;
+  --rk-bg: #121212;
+  --rk-fg: #e6e6e3;
+  --rk-muted: #9a9a96;
+  --rk-rule: #2a2a2a;
+  --rk-subtle: #1a1a1a;
+  --rk-accent: #8fb0ff;
+  --rk-on-accent: #121212;
+  --rk-danger: #f2b8b5;
+  --rk-success: #8fd19e;
+  --rk-warning: #e8c170;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-theme='light'])) {
+    color-scheme: dark;
+    --rk-bg: #121212;
+    --rk-fg: #e6e6e3;
+    --rk-muted: #9a9a96;
+    --rk-rule: #2a2a2a;
+    --rk-subtle: #1a1a1a;
+    --rk-accent: #8fb0ff;
+    --rk-on-accent: #121212;
+    --rk-danger: #f2b8b5;
+    --rk-success: #8fd19e;
+    --rk-warning: #e8c170;
+  }
+}
+
+/* Estilos de campo compartidos por RInput / RTextarea / RSelect / RRadioGroup / RDatePicker */
+.rk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--rk-font-sans);
+}
+.rk-field__label {
+  font-family: var(--rk-font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rk-fg);
+}
+.rk-field__input,
+.rk-field__textarea {
+  padding: 8px 12px;
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-radius);
+  background: var(--rk-bg);
+  color: var(--rk-fg);
+  font-family: var(--rk-font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  transition: border-color 0.15s var(--rk-ease);
+}
+.rk-field__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
+}
+.rk-field__input::placeholder,
+.rk-field__textarea::placeholder {
+  color: var(--rk-muted);
+  opacity: 1;
+}
+.rk-field__input:hover,
+.rk-field__textarea:hover {
+  border-color: var(--rk-muted);
+}
+.rk-field__input:focus-visible,
+.rk-field__textarea:focus-visible {
+  outline: 2px solid var(--rk-accent);
+  outline-offset: 2px;
+  border-color: var(--rk-accent);
+}
+.rk-field__input--error,
+.rk-field__input--error:hover {
+  border-color: var(--rk-danger);
+}
+.rk-field__input--error:focus-visible {
+  outline-color: var(--rk-danger);
+  border-color: var(--rk-danger);
+}
+.rk-field__error {
+  font-size: 0.8125rem;
+  color: var(--rk-danger);
+}
